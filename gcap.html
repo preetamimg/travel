@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/index.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="assets/libs/gsap/gsap1.js"></script>
+</head>
+<body>
+    <div id="back">
+        <nav>
+            <div class="links">
+                <a href="javascript:;">HOME</a><a href="javascript:;">SERVICES</a>
+            </div>
+            <img src="assets/img/gsapLogo.svg" alt="">
+            <div class="links">
+                <a href="javascript:;">PRICING</a><a href="javascript:;">ABOUT</a>
+            </div>
+        </nav>
+        <h1>Spain collection is your ecpert partner for deluxe <br>bespoke travel experiences in</h1>
+        <div id="main" class="">
+                <div id="one" class="imgContainer"><img src="assets/img/img1.jpg" alt=""></div>
+            <div id="holder1" class="holder">
+                <div id="two" class="imgContainer"><img src="assets/img/img2.jpg" alt=""></div>
+                <div id="three" class="imgContainer"><img src="assets/img/img3.jpg" alt=""></div>
+            </div>
+            <div id="vedioPlyr"> 
+                <video src="./assets/img/vedio.mp4" loop autoplay muted></video>
+            </div>
+            <div id="holder2" class="holder">
+                <div id="four" class="imgContainer"><img src="assets/img/img4.jpg" alt=""></div>
+                <div id="five" class="imgContainer"><img src="assets/img/img5.jpg" alt=""></div>
+            </div>
+            <div id="six" class="imgContainer"><img src="assets/img/img6.jpg" alt=""></div>
+        </div>
+    </div>
+    <script src="assets/libs/gsap/gsap2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            let mm = gsap.matchMedia();
+            mm.add("(min-width: 898px)", () =>{
+            gsap.to('#vedioPlyr' ,{
+            scrollTrigger:{
+                trigger: "#main",
+                start: "top top",
+                scrub: 1,
+                pin: "#main"
+            },
+            width: "109%",
+            // ease: "Expo.easeInOut",
+            // end: "+=100%"
+        })
+    });
+        gsap.to(' #one' ,{
+            scrollTrigger:{
+                trigger: "#main",
+                start: "top top",
+                scrub:1
+            },
+            left: '-750px',
+            opacity:0
+        })
+        gsap.to(' #holder1' ,{
+            scrollTrigger:{
+                trigger: "#main",
+                start: "top top",
+                scrub:1
+            },
+            left: '-500px',
+            opacity:0
+        })
+        gsap.to(' #six' ,{
+            scrollTrigger:{
+                trigger: "#main",
+                start: "top top",
+                scrub:1
+            },
+            right: '-750px',
+            opacity:0
+        })
+        gsap.to(' #holder2' ,{
+            scrollTrigger:{
+                trigger: "#main",
+                start: "top top",
+                scrub:1
+            },
+            right: '-500px',
+            opacity:0
+        })
+    </script>
+</body>
+</html>
